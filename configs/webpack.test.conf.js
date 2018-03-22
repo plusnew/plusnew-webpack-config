@@ -43,4 +43,6 @@ module.exports = (libraryName, distPath) => {
       /\.test\.(ts|tsx)$/,
     ]
   });
+
+  return config;
 };
