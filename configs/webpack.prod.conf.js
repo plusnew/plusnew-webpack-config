@@ -1,5 +1,6 @@
-const config = require('./webpack.base.conf.js');
+module.exports = (libraryName, distPath) => {
+  const config = require('./webpack.base.conf.js')(libraryName, distPath);
+  config.mode = 'production';
 
-config.mode = 'production';
-
-module.exports = config;
+  return config;
+}

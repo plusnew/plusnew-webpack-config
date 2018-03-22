@@ -1,13 +1,13 @@
 const webpack = require('webpack');
 const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
-module.exports = {
+module.exports = (libraryName, distPath) => ({
   mode: 'development',
   entry: ['./index.ts'],
   output: {
-      path: __dirname + '/../dist',
+      path: distPath,
       filename: 'index.js',
-      library: "plusnew",
+      library: libraryName,
       libraryTarget: "umd",
   },
   resolve: {
@@ -23,4 +23,4 @@ module.exports = {
       loader: 'awesome-typescript-loader',
     }]
   },
-};
+});
