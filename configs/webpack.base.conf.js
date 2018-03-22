@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = (libraryName, distPath) => ({
   mode: 'development',
@@ -11,11 +12,14 @@ module.exports = (libraryName, distPath) => ({
       libraryTarget: "umd",
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx'],
     plugins: [
       new TsConfigPathsPlugin(/* { configFileName, compiler } */)
     ]
   },
+  plugins: [
+    new CleanWebpackPlugin(distPath),
+  ],
   devtool: 'source-map',
   module: {
     rules: [{
