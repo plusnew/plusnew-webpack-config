@@ -1,1 +1,1 @@
-module.exports = (libraryName, distPath) => require('./webpack.base.conf.js')(libraryName, distPath);
+module.exports = (libraryName, basePath) => require('./webpack.base.conf.js')(libraryName, basePath);
