@@ -13,7 +13,7 @@ module.exports = (libraryName, basePath) => ({
       libraryTarget: "umd",
   },
   resolve: {
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.ts', '.tsx', 'js', 'jsx'],
     plugins: [
       new TsConfigPathsPlugin(/* { configFileName, compiler } */)
     ]
