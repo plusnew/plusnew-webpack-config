@@ -11,9 +11,7 @@ module.exports = (libraryName, basePath) => {
     fs.readdirSync(actualDir).forEach((file) => {
       const filePath = path.join(dir, file);
       const actualFilePath = path.join(basePath, dir, file);
-      // console.log(actualFilePath);
       if(fs.statSync(actualFilePath).isDirectory()) {
-        console.log('DIR:' + filePath, actualFilePath)
         getTestFiles(filePath);
       } else if(filePath.match(/.spec.(tsx|ts)/)) {
         testfiles.push('./' + filePath);
