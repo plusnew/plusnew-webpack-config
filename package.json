@@ -1,6 +1,6 @@
 {
   "name": "plusnew-webpack-config",
-  "version": "0.5.80",
+  "version": "0.5.82",
   "description": "webpack config used at the plusnew ecosystem",
   "main": "src/index.js",
   "scripts": {
@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/plusnew/plusnew-webpack-config#readme",
   "dependencies": {
-    "awesome-typescript-loader": "4.0.1",
+    "awesome-typescript-loader": "5.0.0-1",
     "clean-webpack-plugin": "0.1.19",
-    "istanbul-instrumenter-loader": "3.0.0",
-    "webpack": "4.2.0",
-    "webpack-cli": "2.0.12"
+    "istanbul-instrumenter-loader": "3.0.1",
+    "webpack": "4.5.0",
+    "webpack-cli": "2.0.14"
   }
 }
