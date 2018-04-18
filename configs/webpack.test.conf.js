@@ -1,3 +1,5 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 module.exports = (libraryName, basePath) => {
   const config = require('./webpack.base.conf.js')(libraryName, basePath);
   const path = require('path');
@@ -5,7 +7,7 @@ module.exports = (libraryName, basePath) => {
   const fs = require('fs');
 
   const testfiles = ['./src/index.ts'];
-  
+
   function getTestFiles(dir) {
     const actualDir = path.join(basePath, dir);
     fs.readdirSync(actualDir).forEach((file) => {
@@ -26,6 +28,12 @@ module.exports = (libraryName, basePath) => {
   config.devtool = 'source-map-inline';
 
   if(!config.plugins) config.plugins = [];
+
+  config.plugins.forEach((plugin) => {
+    if (plugin instanceof CleanWebpackPlugin) {
+      plugin.options.exclude.push(config.output.filename);
+    }
+  });
 
   config.plugins.push(
     new webpack.SourceMapDevToolPlugin({
