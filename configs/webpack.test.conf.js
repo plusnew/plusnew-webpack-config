@@ -4,36 +4,10 @@ module.exports = (libraryName, basePath) => {
   const config = require('./webpack.base.conf.js')(libraryName, basePath);
   const path = require('path');
   const webpack = require('webpack');
-  const fs = require('fs');
 
-  const testfiles = ['./src/index.ts'];
-
-  function getTestFiles(dir) {
-    const actualDir = path.join(basePath, dir);
-    fs.readdirSync(actualDir).forEach((file) => {
-      const filePath = path.join(dir, file);
-      const actualFilePath = path.join(basePath, dir, file);
-      if(fs.statSync(actualFilePath).isDirectory()) {
-        getTestFiles(filePath);
-      } else if(filePath.match(/.spec.(tsx|ts)/)) {
-        testfiles.push('./' + filePath);
-      }
-    });
-  }
-
-  getTestFiles('test');
-
-  config.entry = testfiles; //testfiles.map(testFile => testFile.slice(0, 4) === 'src/' ? testFile.slice(4) : '../' + testFile);
-  config.output.filename = 'index.test.js';
   config.devtool = 'source-map-inline';
 
   if(!config.plugins) config.plugins = [];
-
-  config.plugins.forEach((plugin) => {
-    if (plugin instanceof CleanWebpackPlugin) {
-      plugin.options.exclude.push(config.output.filename);
-    }
-  });
 
   config.plugins.push(
     new webpack.SourceMapDevToolPlugin({

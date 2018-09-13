@@ -1,6 +1,6 @@
 {
   "name": "plusnew-webpack-config",
-  "version": "0.5.94",
+  "version": "0.6.14",
   "description": "webpack config used at the plusnew ecosystem",
   "main": "src/index.js",
   "scripts": {
