@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/plusnew/plusnew-webpack-config#readme",
   "dependencies": {
-    "awesome-typescript-loader": "5.0.0-1",
-    "clean-webpack-plugin": "0.1.19",
+    "awesome-typescript-loader": "5.2.1",
+    "clean-webpack-plugin": "2.0.1",
     "istanbul-instrumenter-loader": "3.0.1",
-    "webpack": "4.5.0",
-    "webpack-cli": "2.0.14"
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0"
   }
 }

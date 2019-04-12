@@ -19,9 +19,8 @@ module.exports = (libraryName, basePath) => ({
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist', {
-      root: basePath,
-      exclude: [],
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, '..', 'dist')],
     }),
   ],
   devtool: 'source-map',
