@@ -1,7 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (libraryName, basePath) => ({
   mode: 'development',

@@ -1,5 +1,3 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
 module.exports = (libraryName, basePath) => {
   const config = require('./webpack.base.conf.js')(libraryName, basePath);
   const path = require('path');
