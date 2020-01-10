@@ -1,6 +1,6 @@
 {
   "name": "plusnew-webpack-config",
-  "version": "0.6.64",
+  "version": "0.6.655555",
   "description": "webpack config used at the plusnew ecosystem",
   "main": "src/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "3.0.0",
     "istanbul-instrumenter-loader": "3.0.1",
-    "webpack": "4.41.1",
-    "webpack-cli": "3.3.9"
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10"
   }
 }
